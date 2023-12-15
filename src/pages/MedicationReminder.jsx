@@ -26,11 +26,11 @@ const MedicationReminder = () => {
         Medication Reminder
       </h1>
       <div className="mb-4">
-        <img
+        {/* <img
           src={medicationImage}
           alt="Medication"
           className="w-full h-40 object-cover rounded-md"
-        />
+        /> */}
       </div>
       <div className="mb-4">
         <label htmlFor="medication" className="text-sm text-gray-600 block">
@@ -49,7 +49,7 @@ const MedicationReminder = () => {
           Schedule:
         </label>
         <input
-          type="text"
+          type="datetime-local"
           id="schedule"
           value={schedule}
           onChange={handleScheduleChange}
