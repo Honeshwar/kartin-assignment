@@ -12,8 +12,8 @@ Let’s Innovate!  How can you help Sunita Sharma (65+ years old) to live a heal
 # Technology i used
     ReactJS and TailwindCSS.
 
-![Logo](https://honeshwar.github.io/kartin-assignment/screenshots/tailwindcss.png)
 ![Logo](https://honeshwar.github.io/kartin-assignment/screenshots/reactjs.png)
+![Logo](https://honeshwar.github.io/kartin-assignment/screenshots/tailwindcss.png)
 ## How to setup on local machine
 
 To use this repository your machine should have VsCode ( or any code editor), [node](https://nodejs.org/en/), npm, and git. Now check for this things is install or not :
@@ -26,7 +26,7 @@ To use this repository your machine should have VsCode ( or any code editor), [n
 Clone repository : open terminal and hit this command in your code editor
 
 ```bash
-  git clone  https://github.com/Honeshwar/kartin-assignment.git
+  git clone --branch master https://github.com/Honeshwar/kartin-assignment.git
 ```
 
 Install dependencies :
