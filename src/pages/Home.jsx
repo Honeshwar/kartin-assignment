@@ -2,20 +2,19 @@
 
 import React from "react";
 import { Link } from "react-router-dom";
-import homeImage from "../assets/joy-2483926_640.jpg"; // Import your image
+import {
+  friendsList,
+  activity,
+  journal,
+  medication,
+  healthTips,
+} from "../utils/dummyData";
 
 const Home = () => {
-  const activity = {
-    walking: 500,
-    yoga: 15,
-    exercising: 30,
-  };
-  var journal = [
-    "journals are scholarly publications that focus on a specific discipline or field of study. They are intended for an academic or technical audience, not general readers.  Journal articles usually have the following sections: Abstract, Introduction, Methods, Results, Discussion.   Here are some websites that can help you find research papers:   Google Scholar, Microsoft Academic, Pubmed Central, Science.gov, Worldcat, Refseek.   Here are some free online journal and research databases:   CORE  ScienceOpen  Directory of Open Access Journals  Education Resources Information Center  arXiv e-Print Archive  Social Science Research Network  Public Library of Science  OpenDOAR",
-  ];
   return (
     <>
-      <div className="w-full h-[80%] md:px-40 flex flex-col justify-center">
+      {/* header */}
+      <div className="w-full h-[80%] px-4  pt-4 md:px-40 flex flex-col justify-center my-10 mt-5 overflow-y-auto">
         <h1 className="text-3xl font-bold mb-6 text-indigo-600">
           Elderly Wellness Tracker
         </h1>
@@ -128,21 +127,106 @@ const Home = () => {
         </div>
       </div>
       {/* journals */}
-      <div className="w-[90%] mx-auto px-10 pb-10  rounded-lg shadow-md my-10 shadow-gray-300">
+      <div className="px-2 sm:w-[90%] mx-auto md:px-10 pb-10  my-10">
         <h2 className="text-center text-2xl font-bold mb-6 text-indigo-600 my-5 mb-10 pt-5">
           Journals
         </h2>
-        <div className="w-full flex flex-col gap-10 justify-center">
+        <div className="w-full flex flex-col gap-10 ">
           {journal.map((entry, index) => (
-            <div class="w-full p-4 bg-white border border-gray-200 rounded-lg shadow sm:p-8 dark:bg-gray-800 dark:border-gray-700">
+            <div class="w-full p-4 bg-white border border-gray-200 rounded-lg shadow sm:p-8 dark:bg-gray-800 dark:border-gray-700 ">
               <h5 class="mb-4 text-2xl font-medium text-gray-600 dark:text-gray-400">
                 journal {index + 1}
               </h5>
               <p class="mb-4 text-[16px] font-medium text-gray-500 dark:text-gray-400">
                 {entry}
               </p>
+              <div class="mt-3 flex items-center flex-wrap gap-3">
+                <span class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">
+                  #personal
+                </span>
+                <span class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">
+                  #life
+                </span>
+                <span class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">
+                  #journey
+                </span>
+              </div>
             </div>
           ))}
+        </div>
+      </div>
+      {/*medication reminder  */}
+      <div className="px-2 sm:w-[90%] mx-auto md:px-10 pb-10  my-10">
+        <h2 className="text-center text-2xl font-bold mb-6 text-indigo-600 my-5 mb-10 pt-5">
+          Reminder
+        </h2>
+        <div className="w-full flex flex-wrap gap-10 justify-center">
+          {medication?.map((medication, index) => (
+            <div className="max-w-md bg-white rounded-lg overflow-hidden shadow-md mx-4 sm:mx-auto">
+              <div className="p-4 pl-5 flex flex-col  gap-2">
+                <p className="text-gray-600">
+                  Medication Name: {""}
+                  <span className="font-semibold text-gray-800">
+                    {medication.name}
+                  </span>
+                </p>
+                <p className="text-gray-600">
+                  Reminder Time:{" "}
+                  <span className="font-semibold text-gray-800">
+                    {medication.time}
+                  </span>
+                </p>
+              </div>
+              <div className="p-4 bg-gray-100 flex justify-center">
+                <button
+                  disabled
+                  className=" disabled:opacity-50 bg-blue-500 text-white px-4 py-2 rounded-full focus:outline-none"
+                  onClick={() => {
+                    // handleMedicationDelete(index);
+                  }}
+                >
+                  Mark as Done
+                </button>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+      {/* social media */}
+      <div className="px-2 sm:w-[90%] mx-auto md:px-10 pb-10  my-10">
+        <h2 className="text-center text-2xl font-bold mb-6 text-indigo-600 my-5 mb-10 pt-5">
+          Social Connection Hub
+        </h2>
+        <div className="mb-4 flex flex-wrap justify-center gap-10 sm:gap-20">
+          {friendsList.map((friend, index) => (
+            <div key={index} className="flex flex-col items-center">
+              <img
+                src={friend.image}
+                alt={friend.name}
+                className="w-20 h-20 object-cover rounded-full mb-2"
+              />
+              <p className="text-sm text-gray-700">{friend.name}</p>
+              <button className="mt-2 mx-auto bg-indigo-600 text-white px-4 py-2 rounded-md hover:bg-indigo-700 focus:outline-none focus:ring focus:border-blue-300">
+                Start Video Call
+              </button>
+            </div>
+          ))}
+        </div>
+      </div>
+
+      {/* health tips */}
+      <div className="px-2 sm:w-[90%] mx-auto md:px-10 pb-10  my-10">
+        <h2 className="text-center text-2xl font-bold mb-6 text-indigo-600 my-5 mb-10 pt-5">
+          Health Tips
+        </h2>
+        <div className="flex justify-center items-center px-10">
+          <ul className="list-disc flex flex-col gap-4">
+            {healthTips.map((tip, index) => (
+              <li key={index} className="text-sm text-gray-700">
+                {tip}
+              </li>
+            ))}
+          </ul>
         </div>
       </div>
     </>

@@ -1,7 +1,7 @@
 // HealthTips.js
 
 import React from "react";
-import healthTipImage from "../assets/joy-2483926_640.jpg";
+import healthTipImage from "../assets/healthy-tips.jpg";
 
 const HealthTips = () => {
   const healthTips = [

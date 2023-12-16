@@ -3,7 +3,7 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import { useLocation } from "react-router-dom";
-
+import sunitaSharma from "../assets/sunita sharma.jpg";
 const AsideNav = () => {
   // Use the useLocation hook to get the current path
   const location = useLocation();
@@ -18,10 +18,14 @@ const AsideNav = () => {
 
   return (
     <>
-      <div className="px-1 pb-1 md:hidden">
+      <div
+        className={`${
+          isMenuOpen ? "pl-4" : "pl-1"
+        } md:hidden bg-gray-800 py-2 `}
+      >
         <button
           onClick={toggleMenu}
-          className="text-black focus:outline-none focus:text-gray text-2xl "
+          className="text-white focus:outline-none focus:text-gray text-3xl "
         >
           {isMenuOpen ? "✕" : "☰"} {/* Hamburger icon , &#9776;&#10060;*/}
         </button>
@@ -29,15 +33,15 @@ const AsideNav = () => {
       <aside
         className={`bg-gray-800 text-white h-screen w-full p-4 ${
           isMenuOpen ? "block" : "hidden"
-        } md:block md:w-1/4 mb-4`}
+        } md:block md:w-1/4 mb-4 overflow-y-auto `}
       >
-        <Link to="/" className="flex items-center mb-8">
+        <Link to="/" className="flex items-center mb-8 ">
           <img
-            className="w-12 h-12 rounded-full mr-4"
-            src="https://via.placeholder.com/150"
-            alt="icon"
+            className="w-12 h-12 rounded-full mr-4 object-contain "
+            src={sunitaSharma}
+            alt="logo"
           />
-          <h1>Healthy Life</h1>
+          <h1 className="text-2xl font-bold text-white-600">Sunita Sharma</h1>
         </Link>
         <nav className=" md:block">
           <ul className="flex flex-col gap-3 h-[calc(100vh-150px)]">
@@ -45,13 +49,13 @@ const AsideNav = () => {
             <Link
               to="/"
               className={`${
-                currentPath === "/" && "bg-gray-400"
-              } hover:bg-gray-400`}
+                currentPath === "/" && "bg-gray-500 rounded"
+              } hover:bg-gray-500 rounded`}
               onClick={() => setIsMenuOpen(false)}
             >
               <li className="p-5 px-3 flex items-center">
                 <img
-                  className="w-6 h-6 rounded-full mr-4 bg-blue-400"
+                  className="w-3 h-3 rounded-full mr-4 bg-blue-500 rounded"
                   src="https://via.placeholder.com/150"
                   alt="icon"
                 />
@@ -61,13 +65,13 @@ const AsideNav = () => {
             <Link
               to="/activity-tracker"
               className={`${
-                currentPath === "/activity-tracker" && "bg-gray-400"
-              } hover:bg-gray-400`}
+                currentPath === "/activity-tracker" && "bg-gray-500 rounded"
+              } hover:bg-gray-500 rounded`}
               onClick={() => setIsMenuOpen(false)}
             >
               <li className="p-5 px-3 flex items-center">
                 <img
-                  className="w-6 h-6 rounded-full mr-4"
+                  className="w-3 h-3 rounded-full mr-4"
                   src="https://via.placeholder.com/150"
                   alt="icon"
                 />
@@ -77,13 +81,13 @@ const AsideNav = () => {
             <Link
               to="/journal"
               className={`${
-                currentPath === "/journal" && "bg-gray-400"
-              } hover:bg-gray-400`}
+                currentPath === "/journal" && "bg-gray-500 rounded"
+              } hover:bg-gray-500 rounded`}
               onClick={() => setIsMenuOpen(false)}
             >
               <li className="p-5 px-3 flex items-center">
                 <img
-                  className="w-6 h-6 rounded-full mr-4"
+                  className="w-3 h-3 rounded-full mr-4"
                   src="https://via.placeholder.com/150"
                   alt="icon"
                 />
@@ -93,13 +97,13 @@ const AsideNav = () => {
             <Link
               to="/medication"
               className={`${
-                currentPath === "/medication" && "bg-gray-400"
-              } hover:bg-gray-400`}
+                currentPath === "/medication" && "bg-gray-500 rounded"
+              } hover:bg-gray-500 rounded`}
               onClick={() => setIsMenuOpen(false)}
             >
               <li className="p-5 px-3 flex items-center">
                 <img
-                  className="w-6 h-6 rounded-full mr-4"
+                  className="w-3 h-3 rounded-full mr-4"
                   src="https://via.placeholder.com/150"
                   alt="icon"
                 />
@@ -109,13 +113,13 @@ const AsideNav = () => {
             <Link
               to="/social"
               className={`${
-                currentPath === "/social" && "bg-gray-400"
-              } hover:bg-gray-400`}
+                currentPath === "/social" && "bg-gray-500 rounded"
+              } hover:bg-gray-500 rounded`}
               onClick={() => setIsMenuOpen(false)}
             >
               <li className="p-5 px-3 flex items-center">
                 <img
-                  className="w-6 h-6 rounded-full mr-4"
+                  className="w-3 h-3 rounded-full mr-4"
                   src="https://via.placeholder.com/150"
                   alt="icon"
                 />
@@ -125,13 +129,13 @@ const AsideNav = () => {
             <Link
               to="/health-tips"
               className={`${
-                currentPath === "/health-tips" && "bg-gray-400"
-              } hover:bg-gray-400`}
+                currentPath === "/health-tips" && "bg-gray-500 rounded"
+              } hover:bg-gray-500 rounded`}
               onClick={() => setIsMenuOpen(false)}
             >
               <li className="p-5 px-3 flex items-center">
                 <img
-                  className="w-6 h-6 rounded-full mr-4"
+                  className="w-3 h-3 rounded-full mr-4"
                   src="https://via.placeholder.com/150"
                   alt="icon"
                 />
@@ -142,7 +146,7 @@ const AsideNav = () => {
             <Link to="" className="" onClick={() => setIsMenuOpen(false)}>
               <li className="p-5 px-3 flex items-center">
                 <img
-                  className="w-6 h-6 rounded-full mr-4"
+                  className="w-3 h-3 rounded-full mr-4"
                   src="https://via.placeholder.com/150"
                   alt="icon"
                 />
