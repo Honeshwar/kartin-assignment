@@ -14,7 +14,7 @@ const Home = () => {
   return (
     <>
       {/* header */}
-      <div className="w-full h-[80%] px-4  pt-4 md:px-40 flex flex-col justify-center my-10 mt-5 overflow-y-auto">
+      <div className="w-full h-full px-4  pt-4 md:px-40 flex flex-col justify-center mt-5">
         <h1 className="text-3xl font-bold mb-6 text-indigo-600">
           Elderly Wellness Tracker
         </h1>
@@ -25,9 +25,9 @@ const Home = () => {
           social connections.
         </p>
         <h2 className="text-1xl font-bold mb-6 text-indigo-600">Features</h2>
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4  overflow-y-auto">
           <Link
-            to="/activity"
+            to="/activity-tracker"
             className="bg-indigo-600 text-white px-4 py-2 rounded-md hover:bg-indigo-700 focus:outline-none focus:ring focus:border-blue-300 block"
           >
             Activity Tracker
